@@ -22,7 +22,7 @@ async function run() {
     console.log(items)
     let latest = items[0];
     let tootUrl = latest.toots[0];
-    let originalUrl = latest.url;
+    let originalUrl = latest.url.replace("www.", "");
 
 
     console.log(`Updating ${originalUrl} with link ${tootUrl}`);
