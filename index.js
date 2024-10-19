@@ -2,6 +2,10 @@ const core = require("@actions/core");
 const Micropub = require("micropub-helper");
 // const parsePost = require("./parse-post");
 
+const getPath = () => {
+  return process.cwd() + "/cache/jsonfeed-to-mastodon.json"
+}
+
 async function run() {
   try {
     const token = core.getInput("token");
@@ -12,7 +16,7 @@ async function run() {
       micropubEndpoint: endpoint,
     });
 
-    const cache = require(process.cwd() + "/cache/jsonfeed-to-mastodon.json");
+    const cache = require(getPath());
     console.log(cache)
     let items = cache.items;
     console.log(items)
