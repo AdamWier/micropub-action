@@ -15,7 +15,9 @@ async function run() {
 
     console.log(`Fetching ${feedUrl} …`);
     const feedContent = await fetch(feedUrl).then((response) => response.json());
+    console.log(feedContent)
     let items = feedContent.items;
+    console.log(items)
     let latest = items[0];
     let tootUrl = latest.toots[0];
     let originalUrl = latest.id;
