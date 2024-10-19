@@ -29,7 +29,7 @@ async function run() {
 
     const url = await micropub.update(originalUrl, {
       add: {
-        syndication: tootUrl
+        syndication: [tootUrl]
       }
     });
 
