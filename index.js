@@ -18,11 +18,11 @@ async function run() {
 
     const cache = require(getPath());
     console.log(cache)
-    let items = cache.items;
+    let items = Object.values(cache).reverse();
     console.log(items)
     let latest = items[0];
     let tootUrl = latest.toots[0];
-    let originalUrl = latest.id;
+    let originalUrl = latest.url;
 
 
     console.log(`Updating ${originalUrl} with link ${tootUrl}`);
