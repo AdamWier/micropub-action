@@ -13,7 +13,7 @@ async function run() {
       micropubEndpoint: endpoint,
     });
 
-    info(`Fetching ${feedUrl} …`);
+    console.log(`Fetching ${feedUrl} …`);
     const feedContent = await fetch(feedUrl).then((response) => response.json());
     let items = feedContent.items;
     let latest = items[0];
