@@ -28,7 +28,7 @@ async function run() {
     console.log(`Updating ${originalUrl} with link ${tootUrl}`);
 
     const url = await micropub.update(originalUrl, {
-      add: {
+      replace: {
         syndication: [tootUrl]
       }
     });
