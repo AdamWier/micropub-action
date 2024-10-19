@@ -7,9 +7,8 @@ inputs:
   token:
     description: 'The indieauth token to use'
     required: true
-  post:
-    description: 'The post to create'
-    required: true
+  feedUrl:
+      descrption: "URL of the JSON feed"
 outputs:
   url:
     description: 'URL of the created post'
