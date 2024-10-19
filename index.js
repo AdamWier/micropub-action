@@ -6,17 +6,15 @@ async function run() {
   try {
     const token = core.getInput("token");
     const endpoint = core.getInput("endpoint");
-    const feedUrl = core.getInput("feedUrl");
     const micropub = new Micropub({
       token,
       clientId: "https://github.com/grantcodes/micropub-action",
       micropubEndpoint: endpoint,
     });
 
-    console.log(`Fetching ${feedUrl} …`);
-    const feedContent = await fetch(feedUrl).then((response) => response.json());
-    console.log(feedContent)
-    let items = feedContent.items;
+    const cache = require("cache/jsonfeed-to-mastodon.json");
+    console.log(cache)
+    let items = cache.items;
     console.log(items)
     let latest = items[0];
     let tootUrl = latest.toots[0];
