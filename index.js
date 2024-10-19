@@ -12,7 +12,7 @@ async function run() {
       micropubEndpoint: endpoint,
     });
 
-    const cache = require("./cache/jsonfeed-to-mastodon.json");
+    const cache = require(process.cwd() + "/cache/jsonfeed-to-mastodon.json");
     console.log(cache)
     let items = cache.items;
     console.log(items)
